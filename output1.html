@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+    	<meta charset="utf-8">
+    	<title>徳島大学 Identity Provider - Unified Login Page</title>
+    	<link rel="stylesheet" type="text/css" href="/idp/css/login1.css">
+  	</head>
+  	<body>
+    <div class="wrapper">
+      <div class="container">
+	<img src="/idp/images/logo.png" alt="UT Login" style="width:600px;">	
+        <div class="content">
+          <div class="column1">
+
+
+            <form action="/idp/profile/SAML2/Redirect/SSO?execution=e1s1" method="post">
+
+              <legend>
+Login to Tokushima University manaba service
+              </legend>
+                        
+              <div class="form-element-wrapper">
+                <label for="username">Username</label>
+                <input class="form-element form-field" id="username" name="j_username" type="text"
+                	value="" onchange="upperlower(this)" autofocus>
+              </div>
+
+              <div class="form-element-wrapper">
+                <label for="password">Password</label>
+                <input class="form-element form-field" id="password" name="j_password" type="password" value="">
+              </div>
+
+
+              <div class="form-element-wrapper">
+                <button class="form-element form-button" type="submit" name="_eventId_proceed"
+                    onClick="this.childNodes[0].nodeValue='Logging in, please wait...'"
+                    >Login</button>
+              </div>
+
+            </form>
+          <a href="https://www.ait.tokushima-u.ac.jp/service/list/">Service List</a>(Campus Only)
+          </div>
+          <div class="column2">
+            <div class="helpmessage">
+               <p class="bold">You need login to use this service.</p>
+               <p class="bold">Please read Agreement, then you enter your c-account/password.</p>
+               <p class="bold">Click the button to login.</p><br>
+               <p class="bold head"><span class="item-marker">: </span>Caution</p>
+               <p>・The first character of c-account field is c (small character)</p>
+               <p>・Do not use the back button on your browser.</p>
+               <p>・If you use the service without pressing the Login button, it is considered to have agreed.</p>
+               <p>・If you enter the wrong password more than 3 times, please wait at least 5 minutes and try again.</p>
+            </div>
+
+            <!-- お知らせ -->
+<!--
+            <div class="oshirase">
+             <p><span class="item-marker">: </span> お知らせ</p>
+             <ul class="list list-help">
+               <li class="list-help-item">
+                 <a class="oshirase-item" href="">
+                   <span class="item-time">2020.09.02</span>
+                   おしらせ....
+                 </a>
+               </li>
+               <li class="list-help-item">
+                 <a class="oshirase-item" href="">
+                   <span class="item-time">2020.08.31</span>
+                  おしらせ.... 
+                 </a>
+               </li>
+             </ul>
+            </div>
+-->
+
+            <!-- 固定表示 -->
+            <div class="helpmessage agree">
+             <p class="bold warn">※Please be sure to read.</p>
+             <p class="bold head agree">同 意 書</p>
+             <p class="sentence">
+             本同意書は国立大学法人徳島大学（以下「本学」とする）が平成24年4月1日から稼働している徳島大学統合認証で入力されるユーザーID（cアカウントと呼ぶ）、パスワード、その他の個人認証を必要とする一連のシステム（以下「本システム」とする）の利用に関して定めたものです。
+なお、本システムではcアカウントの表記が「ユーザーID」、「User name」、「アカウント」、「ユーザー名」と記載されている場合があります。本システムを利用する際には、本同意書に加え、個々のシステム毎に定められた約款、利用許諾などに同意の上で利用できるものとします。
+利用者は、本同意書の内容を十分に理解し、許諾された内容の範囲で本システムを利用できるものとします。なお、情報センター（以下「本センター」とする）が管理運用する統合認証システムおよび本システムの利用については、この利用規約への同意によるものとします。
+本システムを利用しようとする者が、本同意書に同意しない場合および本同意書における「1．利用者の資格」を満たさない場合や「4．禁止事項および守秘義務」に違反している者とみなされる場合は、本センターのセンター長権限により、本システムの利用を停止するものとします。
+             </p>
+             <p class="bold">1．利用者の資格</p>
+             <p class="sentence">
+             本システムを利用することができる者は、本学に属する教員・職員及び学生とします。本学に属する教員・職員とは徳島大学の人事給与システムに登録されている者であり、同じく学生は教務事務システムに登録されている者とします。
+ただし、上記に掲げる者のほか、本センター長が特別に認めた者も利用可能とする場合があります。
+             </p>
+             <p class="bold">2．著作権等の知的財産保護</p>
+             <p class="sentence">
+(1)本システムは、著作権等の知的財産権その他に関連して適用される法律等によって保護されます。<br>
+(2)本システムとともに提供されるドキュメント等の関連資料についても、著作権法その他に関連して適用される法律等によって保護されます。<br>
+したがって利用者は、本システムおよび関連資料、付帯のドキュメント等の全部または一部を複製、改変等することはできません。<br>
+(3)本システムを利用し、電子コンテンツ（LMS等で配信する教材、動画等）を掲載、配信等を行う場合は、著作権法並びに関連法令等の制約を受けます。利用にあたっては、法令遵守願います。<br>
+(4)利用者は、本センターの許可なく本システムおよび関連資料を販売、レンタル、リース、頒布、貸与、移転その他の方法で第三者に使用させること、または第三者に同等の行為をさせることはできません。<br>
+(5)利用者は、本システムのリバースエンジニアリング、逆コンパイルまたは逆アセンブルをすることはできません。<br>
+             </p>
+             <p class="bold">3．個人情報の保護</p>
+             <p class="sentence">
+(1)「cアカウント」と「パスワード」は、原則として利用者個人に付与されるものであり、付与されたまたは自ら変更した利用者以外には特別な理由のない限り開示・共有してはいけません。<br>
+(2)「cアカウント」や「パスワード」を忘却・紛失した場合、又は、偽造、変造、盗用その他不正使用の恐れのある場合には、直ちに本センターに連絡して下さい。<br>
+(3)本システムを通じてアクセス可能な個人情報については、個人情報保護法その他の法令に従うことはもとより、社会通念上の問題事項に情報倫理の観点から抵触しないことが求められます。すなわち、公序良俗に反しないことや他者・組織に対する誹謗中傷を避けることが必要です。<br>
+             </p>
+             <p class="bold">4．禁止事項および守秘義務</p>
+             <p class="sentence">
+(1)利用者は、本システムおよび関連資料に付されている著作権表示およびその他の権利表示がある場合には、それらを除去することはできません。<br>
+(2)利用者は、本システムの利用者別の個人を特定可能な識別情報（cアカウント 等）を本センターの許可なく、本学の利用者以外の第三者へ開示および提供することはできません。<br>
+(3)利用者は、許可を受けた目的以外に本システムを利用してはいけません。<br>
+(4)利用者は、退職・転職・卒業等本学の在籍を外れた後も、組織内の情報あるいは知り得た機密情報について、在籍中と同様に、公知あるいはそれに類する情報を除き許可無く発表、公開、漏洩、利用することはできません。<br>
+(5)利用者は、情報セキュリティへの注意義務を負います。本システムにアクセスしようとしている端末において、サポート期限切れの基本ソフトウェアやアプリケーションソフトウェアを利用することはできません。<br>
+             </p>
+             <p class="bold">5．退職、卒業等の扱い</p>
+             <p class="sentence">
+利用者が本学を退職、転職、卒業、退学等で利用者の対象外となる場合、本システムの利用は特別な場合を除き不可とします。
+             </p>
+             <p class="bold">6．留意事項</p>
+             <p class="sentence">
+(1)利用者は、利用の成果又は経過について本センター長または本センター長の許諾する者から報告を求められたときは、速やかに利用報告書を本センター長に提出する必要があります。<br>
+(2)利用者は、故意又は重大な過失により、本センターの設備、備品等を損傷し、又は滅失したときは、遅滞なく、その損害を賠償し、又はこれを原状に回復しなければなりません。<br>
+(3)本システムの利用に当り、利用者に起因する著作権侵害、名誉棄損、個人情報漏洩等のトラブルに関しては、日本法（民法・刑法等）が適用され、当事者同士で問題解決を行うものとし、一切本センターは責任を負わないものとします。<br>
+(4)本システムおよび関連資料は、随時更新されることがあります。更新の情報については、本センターのHPに記載することとします。<br>
+(5)本システムではネットワーク通信の暗号化をcアカウント、パスワードが流れる場合に行っておりますが、すべてのネットワーク通信上のデータが暗号化される訳ではありません。<br>
+(6)本システムでは，本システム上および統合認証上のログに加えて、ファイアウォール、プロキシサーバ等で統計情報作成およびセキュリティ対応を目的として通信ログデータを取得しています。<br>
+(7)本システムの障害発生時には、復旧を目的として通信データの取得を行う場合があります。<br>
+(8)本学のセキュリティリスクに鑑みた予防措置あるいは顕在化した際のリスク対応のために、統合認証のログ情報（cアカウント、IPアドレス、ウェブユーザエージェント情報）を利用して、利用者本人またはその管理組織に対して、リスク報告や是正措置要求を行うことがあります。<br>
+(9)本システムのネットワークサービスレベルに関しては下記規定文書を確認下さい。<br>
+  「ネットワークサービスレベル規定書」<br>
+(10)本システムの下記サービスにおいての留意事項は各サービスの留意事項をご確認ください。<br>
+ ・徳島大学総合ポータルサービス「Chatter」<br>
+ ・徳島大学LMS「manaba」<br>
+ ・徳島大学LMS「Moodle」<br>
+ ・図書館システム「LIMEDIO」<br>
+ ・教務事務システム「DreamCampus」<br>
+             </p>
+             <p class="bold">7．本学以外のクラウドサービスの利用規約</p>
+             <p class="sentence">
+徳島大学統合認証システムの画面上入力される個人認証情報（cアカウントとパスワード）は、統合認証システムに関連して、本学の全学的な学生用メールシステム（@tokushima-u.ac.jp）、および総合ポータル（Chatter）などでも利用されますが、これらは本学以外の外部ベンダーが提供するシステムサービスです。
+これらは本学の一連のサービスと同様の手順で利用するため、氏名、識別情報、所属、大学発行メールアドレス等の情報を用います。これらの情報は、サービスを利用する目的の他は、本システムの管理運用上あるいは利用状況の集計、セキュリティ関連の業務以外で利用されることはありません。
+各々の利用規約は各社が定めているものに準拠するため、利用する際には個々の利用規約およびポリシー等を確認して下さい。<br><br>
+
+(1)メールシステム(Microsoft社)<br>
+　　http://www.microsoft.com/ja-jp/privacy/default.aspx<br>
+(2)Chatter<br>
+　　http://www.salesforce.com/jp/company/privacy.jsp<br>
+(3)manaba<br>
+　　https://manaba.jp/doc/agreement/manaba_yakkan.pdf<br>
+             </p><br>
+             <p class="bold head agree">改訂履歴</p>
+             <p>2019.07.24<b> 6項(8)を追加, 4項(5)を追加</b></p>
+             <p>2017.03.03<b> i-Collaboの記述をmanabaに変更</b></p>
+             <p>2015.09.30<b> 全般的な見直し</b></p>
+            </div>
+          </div>
+         </div>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <title>徳島大学 Identity Provider - Unified Login Page</title>
+    <STYLE type="text/css">
+    <!--
+      span.fs8 {font-size:8pt;}
+      span.fs10 {font-size:10pt;}
+      span.fs12 {font-size:12pt;}
+      span.fs14 {font-size:14pt;}
+      span.fs16 {font-size:16pt;}
+      span.fs18 {font-size:18pt;}
+      .scrollbartext {
+        overflow: scroll;   /* スクロール表示 */
+        width: 410px;
+        height: 280px;
+      }
+     -->
+    </STYLE>
+    <script type="text/javascript">
+	window.onload = function() {
+          var regex = /[?&]([^=#]+)=([^&#]*)/g;
+          var url = window.location.href;
+          var params = {};
+          while (match = regex.exec(url)) {
+            params[match[1]] = match[2];
+          }
+          if (params['execution'].lastIndexOf('s1') < 0) {
+            alert("UsernameまたはPasswordに誤りがありました。\n※3回以上間違った場合5分以上経過後に再度ご利用ください。");
+          }
+          //document.getElementById('username').focus();
+        }
+
+        function upperlower(obj){
+          var _str=obj.value;
+          if(_str.charAt(0)!='c'){
+                alert("Username欄の最初の文字は小文字のcのみです");
+                obj.value="";
+                return false;
+          }
+          if (_str.match(/[ａ-ｚＡ-Ｚ０-９]+/g)){
+                alert('Usernameに全角英数字が含まれています。');
+                obj.value="";
+                return false;
+          }
+          return true;
+        }
+    </script>
+  </head>
+
+<script type="text/javascript">
+      if("$isOSX10_14" == "true" | "$isOSX10_13" == "true" | "$isOSX10_12" == "true" | "$isOSX10_11" == "true" | "$isOSX10_10" == "true" | "$isOSX10_9" == "true" | "$isOSX10_8" == "true" | "$isOSX10_7" == "true" | "$isOSX10_6" == "true" )
+        alert("2世代以上前のmacOSをご利用ではありませんか？\nその場合，サポートが切れている、もしくは残りのサポート期間が短いバージョンと推察されますので，早急にアップデートをお願いします.");
+      if("$isWin8_1" == "true")
+        alert("*********************************************************\nご利用中の端末で，徳島大学統合認証が利用できなくなります\n　　　　　期日：2023年1月10日（火）10:00\n********************************************************\n\nご利用中の端末はWindows 8.1でしょうか？\nWindows 8.1は間もなくサポートが終了します。\n上記期日以降は徳島大学統合認証の利用制限を行ないます。\n速やかにOSアップデートを行なうか，代替機器の準備をお願いします。\n\n問い合わせ先：徳島大学 情報センター");
+      if("$isWin8" == "true" | "$isWinVista" == "true" | "$isWinXP" == "true" )
+        alert("既にサポート期限が終了したWindowsOSをご利用ではありませんか？その場合，本学ネットワークに接続してはいけません．");
+      if("$isWin7" == "true")
+        alert("Windows7をお使いですか？その場合，2020年1月14日にサポート期限が終了しますので，早急にアップデートをお願いします．");
+</script>
+
+
